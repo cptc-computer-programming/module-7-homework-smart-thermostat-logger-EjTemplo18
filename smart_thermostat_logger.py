@@ -34,6 +34,6 @@ average_temp = total_temp / user_readings
 
 print("Smart Thermostat Summary")
 print("------------------------")
-print("Average temperature:", round(average_temp, 2))
+print("Average temperature:", average_temp)
 print("Readings below comfort range:", below_comfort)
 print("Readings above comfort range:", above_comfort)
