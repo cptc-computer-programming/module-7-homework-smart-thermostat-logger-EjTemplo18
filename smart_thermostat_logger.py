@@ -6,17 +6,17 @@ WARM_LIMIT = 76
 
 # Input
 
-User_Temperature = int(input("Enter temperature readings: "))
+user_readings = int(input("Enter temperature readings: "))
 
-while User_Temperature <= 0:
+while user_readings <= 0:
     print("Temperature readings need to be greater than 0.")
-    User_Temperature = int(input("Enter valid temperature readings: "))
+    user_readings = int(input("Enter valid temperature readings: "))
 
 total_temp = 0
 below_comfort = 0
 above_comfort = 0
 
-for i in range(1, User_Temperature + 1):
+for i in range(1, user_readings + 1):
     temp = int(input("Enter temperature number" + str(i) + ": "))
 
     while temp < MIN_VALID_TEMP or temp > MAX_VALID_TEMP:
@@ -30,4 +30,10 @@ for i in range(1, User_Temperature + 1):
     elif temp > WARM_LIMIT:
         above_comfort += 1
 
-average_temp = total_temp / User_Temperature
+average_temp = total_temp / user_readings
+
+print("Smart Thermostat Summary")
+print("------------------------")
+print("Average temperature:", round(average_temp, 2))
+print("Readings below comfort range:", below_comfort)
+print("Readings above comfort range:", above_comfort)
